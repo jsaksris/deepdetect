@@ -13,6 +13,7 @@ before_install:
 install:
    - mkdir build
    - cd build
+   - sudo ionice -c3 updatedb
    - locate hdf5.h
    - cmake .. -DUSE_CPU_ONLY=ON
 #   - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
