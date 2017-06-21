@@ -5,41 +5,22 @@ dist: trusty
 
 before_install:
    - pwd
-   - sudo apt-mark hold postgresql-9.3 postgresql-9.4 postgresql-9.5 postgresql-9.6
-   - sudo apt-get update && sudo apt-get upgrade -y
+#   - sudo apt-mark hold postgresql-9.3 postgresql-9.4 postgresql-9.5 postgresql-9.6
+#   - sudo apt-get update && sudo apt-get upgrade -y
    - sudo apt-get install build-essential libgoogle-glog-dev libgflags-dev libeigen3-dev libopencv-dev libcppnetlib-dev libboost-dev libboost-iostreams-dev libcurlpp-dev libcurl4-openssl-dev protobuf-compiler libopenblas-dev libhdf5-dev libprotobuf-dev libleveldb-dev libsnappy-dev liblmdb-dev libutfcpp-dev cmake libgoogle-perftools-dev unzip
 
    - pip install pyyaml
 
 install:
-   - cd /home/travis/build/jsaksris/deepdetect
+   - cd /home/travis/build/usr/deepdetect
    - mkdir build
    - cd build
    - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
    - cmake -DBUILD_TESTS=ON ..
    - make
 before_script:
-#   - cd /home/travis/build/jsaksris/deepdetect/build/caffe_dd/src/caffe_dd
-#   - ./scripts/download_model_binary.py models/bvlc_googlenet/
-#   - cd ..
-#   - cd ..
-#   - cd ..
-#   - cd ..
-#   - mkdir models
-#   - mkdir models/imgnet
-#   - cp build/caffe_dd/src/caffe_dd/models/bvlc_googlenet/bvlc_googlenet.caffemodel models/imgnet
-#   - cp datasets/imagenet/corresp_ilsvrc12.txt models/imgnet/corresp.txt
-#   - cd models
-#   - mkdir voc0712
-#   - cd voc0712
-#   - wget https://deepdetect.com/models/voc0712_dd.tar.gz
-#   - tar xvzf voc01712_dd.tar.gz
-#   - cd ..
-#   - cd ..
 
 script:
-   - cd /home/travis/build/jsaksris/deepdetect/build 
-   - ctest
 
 notifications:
    email:
