@@ -33,7 +33,7 @@ before_script:
    - cd ..
 
 script:
-   - cd build 
+   - cd /home/travis/build/jsaksris/deepdetect/build 
    - cmake -DBUILD_TESTS=ON .. 
    - make
    - ctest
