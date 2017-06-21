@@ -18,9 +18,9 @@ install:
    - make
 #   - cd ..
 before_script:
-
+   -
 script:
-
+   -
 notifications:
    email:
       on_success: always
