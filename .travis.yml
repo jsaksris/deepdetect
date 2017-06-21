@@ -12,7 +12,10 @@ before_install:
 
 install:
    - cd /home/travis/build/jsaksris/deepdetect
-
+   - mkdir build
+   - cd build
+   - cmake -DBUILD_TESTS=ON ..
+   - make
 before_script:
    - cd /home/travis/build/jsaksris/deepdetect/build/caffe_dd/src/caffe_dd
    - ./scripts/download_model_binary.py models/bvlc_googlenet/
@@ -34,8 +37,6 @@ before_script:
 
 script:
    - cd /home/travis/build/jsaksris/deepdetect/build 
-   - cmake -DBUILD_TESTS=ON .. 
-   - make
    - ctest
 
 notifications:
