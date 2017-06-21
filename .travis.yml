@@ -34,20 +34,20 @@ before_install:
 install:
    - cd /home/travis/build/jsaksris/deepdetect
 ######
-   - export USE_NCCONFIG=0
-   - export HDF5_LIBDIR=/usr/lib/x86_64-linux-gnu/hdf5/serial
-   - export HDF5_INCDIR=/usr/include/hdf5/serial
-   - export NETCDF4_DIR=/usr
+#   - export USE_NCCONFIG=0
+#   - export HDF5_LIBDIR=/usr/lib/x86_64-linux-gnu/hdf5/serial
+#   - export HDF5_INCDIR=/usr/include/hdf5/serial
+#   - export NETCDF4_DIR=/usr
 
 #####
-   - pip install h5py 
-   - mkdir build
-   - cd build
-   - cmake .. -DUSE_CPU_ONLY=ON -DBoost_USE_STATIC_LIBS=ON
+#   - pip install h5py 
+#   - mkdir build
+#   - cd build
+#   - cmake .. -DUSE_CPU_ONLY=ON -DBoost_USE_STATIC_LIBS=ON
 #   - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-   - make
-   - cd ..
-   - cd ..
+#   - make
+#   - cd ..
+#   - cd ..
 
 #before_script:
 #   - cd ..
@@ -69,10 +69,11 @@ install:
 #   - cd ..
 #   - cd ..
 #   - ./build/main/dede
-#script:
-#   - cmake .. -DBUILD_TESTS=ON
-#   - make
-#   - ctest
+script:
+   - cd build 
+   - cmake .. -DBUILD_TESTS=ON
+   - make
+   - ctest
 notifications:
    email:
       on_success: always
