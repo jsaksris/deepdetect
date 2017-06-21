@@ -38,7 +38,7 @@ before_script:
 #   - cd ..
 
 script:
-   - cd /home/travis/build/jsaksris/deepdetect/build 
+   - cd /home/travis/build/jsaksris/deepdetect 
    - ctest
 
 notifications:
