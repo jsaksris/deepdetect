@@ -20,7 +20,7 @@ install:
 before_script:
    -
 script:
-   -
+   - test
 notifications:
    email:
       on_success: always
