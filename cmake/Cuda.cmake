@@ -58,10 +58,6 @@ macro(deepdetect_list_unique)
 endmacro()
 
 ################################################################################################
- 
- 
-################################################################################################
-
 # Function for selecting GPU arch flags for nvcc based on CUDA_ARCH_NAME
 # Usage:
 #   deepdetect_select_nvcc_arch_flags(out_variable)
